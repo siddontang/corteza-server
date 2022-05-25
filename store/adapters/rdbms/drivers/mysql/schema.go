@@ -25,7 +25,7 @@ func (s *schema) CreateTable(ctx context.Context, db sqlx.ExtContext, t *ddl.Tab
 	tc := &ddl.CreateTableTemplate{
 		Table:         t,
 		TrColumnTypes: columnTypTranslator,
-		SuffixClause:  "ENGINE=InnoDB DEFAULT CHARSET=utf8",
+		SuffixClause:  "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci",
 	}
 
 	if err = ddl.Exec(ctx, db, tc); err != nil {

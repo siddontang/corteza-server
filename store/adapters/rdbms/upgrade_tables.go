@@ -195,7 +195,7 @@ func tableAuthOA2Tokens() *Table {
 
 		AddIndex("expires_at", IColumn("expires_at")),
 		AddIndex("code", IColumn("code")),
-		AddIndex("access", IColumn("access")),
+		AddIndex("access", IColumn("access(1024)")),
 		AddIndex("refresh", IColumn("refresh")),
 		AddIndex("client", IColumn("rel_client")),
 		AddIndex("user", IColumn("rel_user")),
